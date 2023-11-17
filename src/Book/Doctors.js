@@ -19,10 +19,30 @@ function Doctors() {
             years: "14",
             location: [-53.1, -113],
             description:"hy my name is xyz and im a clincial phys at uofa ."
-}
+},
+       {
+        name: "Rose",
+        years: "14",
+        location: [-53.1, -113],
+        description: "hy my name is xyz and im a clincial phys at uofa ."
+      }, {
+        name: "Rose",
+        years: "14",
+        location: [-53.1, -113],
+        description: "hy my name is xyz and im a clincial phys at uofa ."
+      }, {
+        name: "Rose",
+        years: "14",
+        location: [-53.1, -113],
+        description: "hy my name is xyz and im a clincial phys at uofa ."
+      }
 ]
   return (
-    <div><Doctormapper doctors={doctors}/></div>
+    <div> 
+      <h2 className='doctor-title-main'>Available doctors</h2>
+    
+    <Doctormapper doctors={doctors}/>
+    </div>
   )
 }
 
