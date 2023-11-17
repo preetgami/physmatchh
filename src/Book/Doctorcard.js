@@ -8,15 +8,42 @@ function Doctorcard(props) {
     const openDesc = () => setopendescription(true);
     const closeDesc = () => setopendescription(false);
 
+    const [openform, setopenform] = useState(false)
+    const openForm = () => setopenform(true);
+    const closeform = () => setopenform(false);
+    const Sendtobackend=()=>{
+        console.log("backkkkkkkk");
+        setopenform(false);
+    }
 
+
+    const foot2= <div style={{display:"flex" ,justifyContent:'space-between'}}>
+    <button className="doc-button" onClick={closeform}>Close</button>
+    <button className="doc-button" onClick={Sendtobackend}>Send</button>
+    </div>
     /*book an pointment is here!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
     const Bookapt=()=>{
         console.log("bookin");
         setopendescription(false);
+        openForm(true)
+        
     }
     /*book an pointment is here!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
 
+    const content_book = <Modal
+        show={openform}
+        onCancel={closeform}
+        header={props.name}
+        footer={foot2}
+    >
 
+        <div className='modal-content'>
+
+            
+        form goes here
+            
+        </div>
+    </Modal>
 
     const foot= <div style={{display:"flex" ,justifyContent:'space-between'}}>
         <button className="doc-button" onClick={closeDesc}>Close</button>
@@ -39,6 +66,7 @@ function Doctorcard(props) {
   return (
       <div className='container'>
           {opendescription && content}
+          {openform &&content_book}
 
           <button className='custom-button' onClick={openDesc}>
               <div className='content'>
