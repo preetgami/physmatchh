@@ -16,9 +16,9 @@ import DoctorPage from "./Book/DoctorPage";
 
 // supabase
 import { createClient } from "@supabase/supabase-js";
-const supabaseURL = "https://pvyayzkxlhyozfwyriwv.supabase.co";
+const supabaseURL = "https://agcjyctxnumrckwiyldb.supabase.co/";
 const supabaseKey =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InB2eWF5emt4bGh5b3pmd3lyaXd2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDAxNzgyMjUsImV4cCI6MjAxNTc1NDIyNX0.FObVVy75W5gcTz7YFfVrzvfazOVuRX57wfBzxuDmL1U";
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFnY2p5Y3R4bnVtcmNrd2l5bGRiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDAyNDQ1MDUsImV4cCI6MjAxNTgyMDUwNX0.pDNYEqKNYOEtqpUhclHt_pTob0ZA7lIpbfL30JElIik";
 const supabase = createClient(supabaseURL, supabaseKey);
 
 function App() {
