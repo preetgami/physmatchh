@@ -13,3 +13,9 @@
 .authentication form {
   margin-bottom: 1rem;
 }
+.center-auth-form{
+  justify-content: center;
+  display: flex;
+  justify-content: center; /* Horizontally center */
+  align-items: center; /* Vertically center */
+}

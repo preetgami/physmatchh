@@ -140,6 +140,7 @@ function Auth({ supabase, session }) {
       </Card>
     </React.Fragment>
   );
+
 }
 
 export default Auth;
