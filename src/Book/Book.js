@@ -1,11 +1,17 @@
 import React from 'react'
-import Map from './Map'
-
+import MapContainer from './MapContainer'
+import Doctors from './Doctors'
+import "./Maps.css"
 function Book() {
   
   return (
-    <div>
-      <Map/></div>
+    <div className='book-main' > 
+      <MapContainer/>
+      <div style={{padding:"10px", width:"100%"}}> 
+        <Doctors />
+
+      </div>
+      </div>
   )
 }
 
