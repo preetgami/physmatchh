@@ -41,7 +41,10 @@ function Clients() {
               <div className="card_car-text-h">Phone</div>
             </div>
             <div className="table-cell">
-              <div className="card_car-text-h">Last Appointment</div>
+              <div className="card_car-text-h">Last Seen</div>
+            </div>
+            <div className="table-cell">
+              <div className="card_car-text-h"></div>
             </div>
           </div>
         </div>

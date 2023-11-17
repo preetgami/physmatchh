@@ -48,7 +48,7 @@ function CardClient(props) {
         <div className='table'>
             <div className="table-row">
                 <div className="table-cell">
-                    <h2 className="card_car-title">{props.name}</h2>
+                    <div className="card_car-title">{props.name}</div>
                 </div>
                 <div className="table-cell">
                     <div className="card_car-text">{props.email}</div>

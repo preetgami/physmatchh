@@ -63,6 +63,8 @@ function Auth() {
 
     return (
         <React.Fragment>
+            <div className='center-auth-form'>
+
             <Card className="authentication">
                 <h2>Login Required</h2>
                 <hr />
@@ -105,6 +107,8 @@ function Auth() {
                     SWITCH TO {islogin ? 'SIGNUP' : 'LOGIN'}
                 </Button>
             </Card>
+            </div>
+
         </React.Fragment>
     );
 }
