@@ -12,7 +12,7 @@ function OnboardCard(props) {
           <p>Phone: {props.phone}</p>
           <p>Requested: {props.requested}</p>
               <button className="onboardbutton">
-                  Accept
+                  Start
               </button>
       </div>
           

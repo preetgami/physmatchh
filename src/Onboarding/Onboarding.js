@@ -28,7 +28,7 @@ function Onboarding() {
   return (
     <div>
       <h1 style={{ textAlign: 'center' }}>
-        Your Requests
+        Your Next Meeting
       </h1>
       
       <Onboardmapper clients={clients}/></div>
