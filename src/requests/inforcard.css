@@ -7,12 +7,12 @@ body {
   }
   
   .information-card {
-    border: 1px solid #e1e1e1;
+    border: 1px solid #000000;
     padding: 16px;
     margin: 16px;
     border-radius: 15px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0);
+    background-color: #F3E9D2;
     transition: box-shadow 0.3s ease;
   }
   
@@ -25,10 +25,10 @@ body {
   /* styles.css */
   
   .profile-pic {
-    width: 100px; /* Set the width as needed */
-    height: 100px; /* Set the height as needed */
+    width: 100px; 
+    height: 100px; 
     border-radius: 50%;
-    overflow: hidden; /* Ensure content within the border-radius is visible */
+    overflow: hidden; 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -56,10 +56,20 @@ body {
     margin-top: 16px;
     display: flex;
     justify-content: flex-start;
+    background-color: #F3E9D2;
+
   }
+  .onboardbutton {
+  width: 10%;
+
+}
+.onboardbutton:hover {
   
+
+}
   .buttons {
     margin-top: 16px;
+    
     display: flex;
     justify-content: center; /* Center align buttons horizontally */
     align-items: center; /* Center align buttons vertically */
@@ -67,25 +77,33 @@ body {
   
   .accept-button,
   .change-appointment-button {
-    background-color: #4caf50;
+    scale: 1.1;
+    background-color: #114B5F;
     color: white;
     padding: 12px 16px;
     margin-right: 10px;
     border: none;
     border-radius: 10px;
     cursor: pointer;
+    margin-left: 30px;
     transition: background-color 0.3s ease;
   }
   
   .accept-button:hover,
   .change-appointment-button:hover {
-    background-color: #45a049;
+    scale: 1.2;
+  background-color: #0a2933;
+
+  color: white;
   }
   
   .change-appointment-button {
-    background-color: #f44336;
+  background-color: #114B5F;
+  color: white;
   }
   
   .change-appointment-button:hover {
-    background-color: #d32f2f;
+    scale: 1.2;
+  background-color: #0a2933;
+  color: white;
   }

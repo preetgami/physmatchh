@@ -16,12 +16,13 @@
 }
 .onboardbutton {
   width: 10%;
-  background-color: #F3E9D2;
+  background-color: #114B5F;
+  color: white;
 
 }
 .onboardbutton:hover {
   scale: 1.1;
-  background-color: #114B5F;
+  background-color: #0a2933;
   color: white;
 
 }
