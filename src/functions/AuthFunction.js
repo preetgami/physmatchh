@@ -8,7 +8,7 @@ const AuthFunction = (supabase) => {
         options: { data: { name: name } },
       });
       console.log(data, error);
-      return data;
+      return [data, error];
     },
 
     // signs in user
@@ -18,7 +18,7 @@ const AuthFunction = (supabase) => {
         password: password,
       });
       console.log(data);
-      return data;
+      return [data, error];
     },
 
     // get current session, if user is not logged in, this will be null
