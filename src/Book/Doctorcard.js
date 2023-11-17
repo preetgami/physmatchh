@@ -42,7 +42,7 @@ function Doctorcard(props) {
 
           <button className='custom-button' onClick={openDesc}>
               <div className='content'>
-                  <h2>{props.name}</h2>
+                  <h3>Doctor : {props.name}</h3>
                   <p>Years: {props.years}</p>
               </div>
           </button>

@@ -25,15 +25,13 @@
 .nav-links a:hover,
 .nav-links a:active,
 .nav-links a.active {
-  background: #f8df00;
+  background: #114B5F;
   border-color: #292929;
-  color: #292929;
 }
 
 .nav-links button {
   cursor: pointer;
   border: 1px solid #292929;
-  color: #292929;
   background: transparent;
   padding: 0.5rem;
   font: inherit;
@@ -43,11 +41,7 @@
   outline: none;
 }
 
-.nav-links button:hover,
-.nav-links button:active {
-  background: #292929;
-  color: white;
-}
+
 
 @media (min-width: 768px) {
   .nav-links {
@@ -71,7 +65,8 @@
 
   .nav-links button:hover,
   .nav-links button:active {
-    background: #f8df00;
-    color: #292929;
+    background: #114B5F;
+    color: white;
+
   }
 }

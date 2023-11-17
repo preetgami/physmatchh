@@ -14,16 +14,16 @@ function CardClient(props) {
         
         <div className="table-row">
         <div className="table-cell">
-            <h2 className="card_car-title1">{props.extra_details[0]}</h2>
+            <h3 className="card_car-title1">{props.extra_details[0]}</h3>
         </div>
         <div className="table-cell">
-            <h2 className="card_car-title1">{props.extra_details[1]}</h2>
+            <h3 className="card_car-title1">{props.extra_details[1]}</h3>
         </div>
         <div className="table-cell">
-            <h2 className="card_car-title1">{props.extra_details[2]}</h2>
+            <h3 className="card_car-title1">{props.extra_details[2]}</h3>
         </div>
         <div className="table-cell">
-            <h2 className="card_car-title1">{props.extra_details[3]}</h2>
+            <h3 className="card_car-title1">{props.extra_details[3]}</h3>
         </div>
 
     </div>
@@ -34,16 +34,16 @@ function CardClient(props) {
     let header = 
         <div className="table-row" >
         <div className="table-cell">
-            <h2 className="card_car-title-h1">Age</h2>
+            <h3 className="card_car-title-h1">Age</h3>
         </div>
         <div className="table-cell">
-            <h2 className="card_car-title-h1">Height</h2>
+            <h3 className="card_car-title-h1">Height</h3>
         </div>
         <div className="table-cell">
-            <h2 className="card_car-title-h1">Weight</h2>
+            <h3 className="card_car-title-h1">Weight</h3>
         </div>
         <div className="table-cell">
-            <h2 className="card_car-title-h1">Bp </h2>
+            <h3 className="card_car-title-h1">Bp </h3>
         </div>
 
         </div >
