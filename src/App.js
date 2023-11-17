@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   BrowserRouter as Router,
   Route,
   Routes,
-  Navigate
+  Navigate,
 } from "react-router-dom";
 import { useEffect } from "react";
 import MainNavigation from "./shared/Navigation/MainNavigation";
@@ -14,48 +14,57 @@ import Clients from "./clients/clients";
 import Onboarding from "./Onboarding/Onboarding";
 import Requests from "./requests/Requests";
 import Book from "./Book/Book";
+
+// supabase
+import { createClient } from "@supabase/supabase-js";
+const supabaseURL = "https://pvyayzkxlhyozfwyriwv.supabase.co";
+const supabaseKey =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InB2eWF5emt4bGh5b3pmd3lyaXd2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDAxNzgyMjUsImV4cCI6MjAxNTc1NDIyNX0.FObVVy75W5gcTz7YFfVrzvfazOVuRX57wfBzxuDmL1U";
+const supabase = createClient(supabaseURL, supabaseKey);
+
 function App() {
-  const { token, login, logout, userId } = useAuth()
-  console.log("her",userId);
+  const [session, setSession] = useState(null);
+
+  useEffect(() => {
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      setSession(session);
+    });
+
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange((_event, session) => {
+      setSession(session);
+    });
+
+    return () => subscription.unsubscribe();
+  }, []);
+
   let routes;
 
-  if (token) {
+  if (true) {
     routes = (
-      
       <Routes>
         <Route exact path="/clients" element={<Clients />} />
 
         <Route exact path="/onboarding" element={<Onboarding />} />
         <Route exact path="/requests" element={<Requests />} />
 
-        <Route exact path="/auth" element={<Auth />} />
-       
-      </Routes>)
-  } else {
-    routes = (
-      <Routes>
-        <Route exact path="/" element={<Book />} />
-        <Route exact path="/auth" element={<Auth />} />
-
+        <Route
+          exact
+          path="/auth"
+          element={<Auth supabase={supabase} session={session} />}
+        />
       </Routes>
-    )
+    );
+  } else {
   }
 
   return (
-    <Authcontex.Provider value={{ islogedin: !!token, token: token, login: login, logout: logout, userId: userId }}>
-      
-      <Router>
-
-        {/* switch enables one route only to be used */}
-        <MainNavigation />
-        <main>
-
-          {routes}
-
-        </main>
-      </Router>
-      
-    </Authcontex.Provider>
+    <Router>
+      {/* switch enables one route only to be used */}
+      <MainNavigation supabase={supabase} session={session} />
+      <main>{routes}</main>
+    </Router>
   );
 }
 
