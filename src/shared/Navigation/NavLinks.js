@@ -3,11 +3,13 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import "./NavLinks.css";
 import AuthFunction from "../../functions/AuthFunction";
+import { useNavigate } from "react-router-dom";
 export default function NavLinks({ supabase, session }) {
   const authFunction = AuthFunction(supabase);
-
+  const navigate = useNavigate();
   const logoutUser = async () => {
     const { error } = await supabase.auth.signOut();
+    navigate("/");
   };
 
   return (

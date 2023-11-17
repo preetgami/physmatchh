@@ -87,15 +87,19 @@ function Auth({ supabase, session }) {
         // if login page
         // sign in user
         const data = await authFunction.signIn(email, password);
-        console.log(data);
+        console.log(data,"000000");
+        if(data.user){
+          navigate("/clients");
 
-        navigate("/clients");
+        }
+
       }
     }
   };
 
   return (
     <React.Fragment>
+      <div className="center-signup">
       <Card className="authentication">
         <h2>Login Required</h2>
         <hr />
@@ -138,6 +142,7 @@ function Auth({ supabase, session }) {
           SWITCH TO {islogin ? "SIGNUP" : "LOGIN"}
         </Button>
       </Card>
+      </div>
     </React.Fragment>
   );
 
