@@ -10,7 +10,9 @@ function CardClient(props) {
         setopendescription(!opendescription);
     };
 
-    let content_car = <div className="table-row">
+    let content_car = 
+        
+        <div className="table-row">
         <div className="table-cell">
             <h2 className="card_car-title1">{props.extra_details[0]}</h2>
         </div>
@@ -25,10 +27,12 @@ function CardClient(props) {
         </div>
 
     </div>
+ 
 
 
 
-    let header = <div className="table-row" >
+    let header = 
+        <div className="table-row" >
         <div className="table-cell">
             <h2 className="card_car-title-h1">Age</h2>
         </div>
@@ -42,7 +46,9 @@ function CardClient(props) {
             <h2 className="card_car-title-h1">Bp </h2>
         </div>
 
-    </div >
+        </div >
+
+
     return (<React.Fragment>
 
         <div className='table'>

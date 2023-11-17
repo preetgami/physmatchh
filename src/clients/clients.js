@@ -27,12 +27,14 @@ function Clients() {
     }]
   return (
     <div>
-      <h2>Clients</h2>
+      <h1 style={{ textAlign: 'center' }}>
+        Clients
+      </h1>
       <div>
         <div className='table'>
           <div className="table-row">
             <div className="table-cell">
-              <h2 className="card_car-title-h">Name</h2>
+              <div className="card_car-title-h">Name</div>
             </div>
             <div className="table-cell">
               <div className="card_car-text-h">Email</div>
