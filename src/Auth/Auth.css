@@ -9,7 +9,11 @@
   margin: 7rem auto;
   text-align: center;
 }
+.center-signup{
+  display: flex; 
+  justify-content: center;
 
+}
 .authentication form {
   margin-bottom: 1rem;
 }

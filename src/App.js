@@ -40,8 +40,8 @@ function App() {
   }, []);
 
   let routes;
-
-  if (true) {
+  console.log(session,"hejkrhewjkh")
+  if (session) {
     routes = (
       <Routes>
         <Route exact path="/clients" element={<Clients />} />
@@ -54,9 +54,21 @@ function App() {
           path="/auth"
           element={<Auth supabase={supabase} session={session} />}
         />
+
       </Routes>
     );
   } else {
+    routes=(
+    <Routes>
+
+      <Route exact path="/" element={<Book />} />
+      <Route
+            exact
+            path="/auth"
+            element={<Auth supabase={supabase} session={session} />}
+          />
+    </Routes>
+    )
   }
 
   return (

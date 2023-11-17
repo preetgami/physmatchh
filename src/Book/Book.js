@@ -1,8 +1,11 @@
 import React from 'react'
+import Map from './Map'
 
 function Book() {
+  
   return (
-    <div>Book 12312312</div>
+    <div>
+      <Map/></div>
   )
 }
 
