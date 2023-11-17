@@ -1,7 +1,7 @@
 // Requests.js
 
 import React from 'react';
-import './styles.css';
+import './inforcard.css';
 
 
 const userInfo = [
@@ -33,7 +33,7 @@ function Requests() {
     <div>
       {userInfo.map((user, index) => (
         <div className="information-card" key={index}>
-          <div class="profile-pic"><img src={user.profilePic} alt="Profile-Picture" /></div>
+          <div class="profile-pic"><img src={('./tom.jpg')}alt='picture here' /></div>
           <div className="name">
             <strong>{user.name}</strong>
           </div>
@@ -48,7 +48,7 @@ function Requests() {
           </div>
           <div className="buttons">
             <button className="accept-button">Accept</button>
-            <button className="change-appointment-button">Change Appointment</button>
+            <button className="change-appointment-button" >Change Appointment</button>
           </div>
         </div>
       ))}
