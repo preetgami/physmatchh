@@ -8,12 +8,11 @@ import {
 import { useEffect } from "react";
 import MainNavigation from "./shared/Navigation/MainNavigation";
 import Auth from "./Auth/Auth";
-import { Authcontex } from "./shared/hooks/auth-context";
-import useAuth from "./shared/hooks/auth-hook";
 import Clients from "./clients/clients";
 import Onboarding from "./Onboarding/Onboarding";
 import Requests from "./requests/Requests";
 import Book from "./Book/Book";
+import DoctorPage from "./Book/DoctorPage";
 
 // supabase
 import { createClient } from "@supabase/supabase-js";
@@ -40,7 +39,8 @@ function App() {
   }, []);
 
   let routes;
-  console.log(session,"hejkrhewjkh")
+
+  // routes for when doctor is logged in (doctor view)
   if (session) {
     routes = (
       <Routes>
@@ -58,16 +58,18 @@ function App() {
       </Routes>
     );
   } else {
-    routes=(
-    <Routes>
+    // routes for when doctor is not logged in (client view)
+    routes = (
+      <Routes>
 
-      <Route exact path="/" element={<Book />} />
-      <Route
-            exact
-            path="/auth"
-            element={<Auth supabase={supabase} session={session} />}
-          />
-    </Routes>
+        <Route exact path="/" element={<Book supabase={supabase} session={session} />} />
+        <Route exact path="/doctor_page/:id" element={<DoctorPage supabase={supabase} session={session} />} />
+        <Route
+          exact
+          path="/auth"
+          element={<Auth supabase={supabase} session={session} />}
+        />
+      </Routes>
     )
   }
 
