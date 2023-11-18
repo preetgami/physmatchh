@@ -4,7 +4,7 @@ import Doctormapper from './Doctormapper'
 function Doctors() {
     let doctors=[{
       name:"Jai",
-        years:"14",
+        years:"100",
         location:[-53,-113],
       description: "hy my name is xyz and im a phys at uofa "
 
