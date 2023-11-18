@@ -7,9 +7,8 @@ app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins": "http://localhost:3000"}})
 # Load the model outside of the route decorator to load it only once when the app starts
 try:
-    rf = load('./randomforest.joblib')
+    rf = load('randomforest.joblib')
 except Exception as e:
-    print("BIG ERROR")
     print("An error occurred:", e)
 
 # Function to make predictions
@@ -47,29 +46,16 @@ def bunch_clean_data_by_second(csv_file):
 
 @app.route('/')
 def hello_world():
-    # Read the CSV file when the user accesses the endpoint
-
-
-    #To Do- connect muse and write data to a csv
-
-
-
-
-    #To Do- split the csv into second blocks and then simply call the function
-
-
-    #Front end will make appropriate calls
-
-
-
-
-
 
     # give this func a csv and should work
-    stuff=bunch_clean_data_by_second("eeglive.csv")
+    stuff=bunch_clean_data_by_second("./test.csv")
+
     stuff.set_index(stuff.columns[0], inplace=True)
     # Make predictions using the loaded model
     x = make_a_pred(stuff)
+
+    print(stuff)
+    print("Everything is working!")
     
     # Return predictions as JSON
     return jsonify({'predictions': x.tolist()})

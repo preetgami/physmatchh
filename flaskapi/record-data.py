@@ -1,3 +1,3 @@
 from muselsl import record
 
-record(duration=60)
+record(duration=360)

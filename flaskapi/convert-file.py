@@ -7,6 +7,11 @@ from mne.preprocessing import ICA
 from time import sleep
 import sys
 
+import mne
+import pandas as pd
+import numpy as np
+import re
+
 def tail(filename, n=10):
     with open(filename, 'r') as file:
         # Read the last n lines from the file
@@ -15,22 +20,23 @@ def tail(filename, n=10):
 
 def load_and_filter_csv(file_path, output_file_path, num_lines=1000, polling_interval=1):
     # Open the output file for writing the header
-    with open(output_file_path, 'w') as output_file:
-        output_file.write("Timestamp,TP9,AF7,AF8,TP10,Right AUX\n")
 
     while True:
         # Get the last few lines of the CSV file
         last_lines = tail(file_path, num_lines)
 
         # Process the last lines
-        print(last_lines[0])
+        print(last_lines[len(last_lines) - 1])
 
         # Open the output file for appending and write the last lines
-        with open(output_file_path, 'a') as output_file:
+        with open(output_file_path, 'w') as output_file:
+            output_file.write("Timestamp,TP9,AF7,AF8,TP10,Right AUX\n")
             output_file.writelines(last_lines)
 
         # Wait for the specified interval before checking again
         sleep(polling_interval)
+
+
 
 # Example usage:
 if __name__ == "__main__":
