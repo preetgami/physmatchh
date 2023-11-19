@@ -14,7 +14,7 @@ export default function NavLinks({ supabase, session }) {
 
   return (
     <ul className="nav-links">
-      {!session && (
+      {session && (
         <li>
           <NavLink to="/" exact>
             Book A Doc
@@ -36,13 +36,13 @@ export default function NavLinks({ supabase, session }) {
           <NavLink to="/requests">Requests</NavLink>
         </li>
       )}
-      {!session && (
+      {session && (
         <li>
           <NavLink to="/auth">Doctor log-in</NavLink>
         </li>
       )}
 
-      {session && (
+      {!session && (
         <li>
           <button
             onClick={() => {

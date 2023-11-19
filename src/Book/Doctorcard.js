@@ -2,7 +2,7 @@ import React from 'react'
 import "./Maps.css"
 import { useState } from 'react'
 import Modal from "../shared/UIelemets/Modal"
-
+import MainForm from '../clientsform/mainform'
 function Doctorcard(props) {
     const [opendescription, setopendescription] = useState(false)
     const openDesc = () => setopendescription(true);
@@ -40,7 +40,7 @@ function Doctorcard(props) {
         <div className='modal-content'>
 
             
-        form goes here
+            <MainForm/>
             
         </div>
     </Modal>
@@ -71,7 +71,7 @@ function Doctorcard(props) {
           <button className='custom-button' onClick={openDesc}>
               <div className='content'>
                   <h3>Doctor : {props.name}</h3>
-                  <p>Years: {props.years}</p>
+                  <p>Years Worked: {props.years}</p>
               </div>
           </button>
       </div>
