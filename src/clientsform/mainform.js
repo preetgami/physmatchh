@@ -1,74 +1,77 @@
-import React from 'react'
-import Button from '../shared/formsElement/Button';
-import {
-    VALIDATOR_EMAIL,
-    VALIDATOR_MINLENGTH,
-    VALIDATOR_REQUIRE,
-} from "../shared/formsElement/validators";
+
 import Input from '../shared/formsElement/Input';
 import { useForm } from '../shared/hooks/form-hook';
+import {
+    // VALIDATOR_EMAIL,
+    // VALIDATOR_MINLENGTH,
+    VALIDATOR_REQUIRE,
+  } from "../shared/formsElement/validators";
 function MainForm(props) {
     const [formstate, inputHandler, setformdata] = useForm({
         email: {
-            value: "",
-            isValid: false,
+          value: "",
+          isValid: true,
         },
-        password: {
-            value: "",
-            isValid: false,
+        name: {
+          value: "",
+          isValid: true,
         },
-    });
-    const switchModeHandler = () => {
-            setformdata(
-                {
-                    ...formstate.inputs,
-                    name: undefined,
-                    image: undefined,
-                },
-                formstate.inputs.email.isValid && formstate.inputs.password.isValid
-            );
-        
-    };
-    return(<React.Fragment>
-
-    
-    <div>
-          <form>
-
-              <Input
-                element="input"
-                id="name"
-                type="text"
-                label="Your Name"
-                validators={[VALIDATOR_REQUIRE()]}
-                errorText="Please enter a name."
-                onInput={inputHandler}
-              />
-
-            <Input
+        date: {
+            value: "",
+            isValid: true,
+        },
+        phonenumber: {
+            value: "",
+            isValid: true,
+        },
+        address: {
+            value: "",
+            isValid: true,
+        }
+      });
+    console.log(formstate)
+    return(<div>
+        <Input
+              element="input"
+              id="name"
+              type="name"
+              label="Name"
+              validators={[VALIDATOR_REQUIRE()]}
+             onInput={inputHandler}
+            />
+        <Input
               element="input"
               id="email"
               type="email"
-              label="E-Mail"
-              validators={[VALIDATOR_EMAIL()]}
-              errorText="Please enter a valid email address."
-              onInput={inputHandler}
+              label="Email"
+              validators={[VALIDATOR_REQUIRE()]}
+             onInput={inputHandler}
             />
-            <Input
+        <Input
               element="input"
-            id="Phone Number"
-              type="Phone Number"
-                    label="Phone Number"
-                    validators={[VALIDATOR_REQUIRE()]}
-                    errorText="Please enter a phone  number."
-
-              onInput={inputHandler}
+              id="date"
+              type="date"
+              label="Date"
+              validators={[VALIDATOR_REQUIRE()]}
+             onInput={inputHandler}
             />
-            
-          </form>
-          
-    </div>
-    </React.Fragment >
-    )
+        <Input
+              element="input"
+              id="phonenumber"
+              type="phonenumber"
+              label="Phone Number"
+              validators={[VALIDATOR_REQUIRE()]}
+             onInput={inputHandler}
+            />
+        <Input
+              element="input"
+              id="address"
+              type="address"
+              label="Address"
+              validators={[VALIDATOR_REQUIRE()]}
+             onInput={inputHandler}
+            />
+    </div>)
+
 }
 export default MainForm;

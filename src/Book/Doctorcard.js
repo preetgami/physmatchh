@@ -3,6 +3,7 @@ import "./Maps.css"
 import { useState } from 'react'
 import Modal from "../shared/UIelemets/Modal"
 import MainForm from '../clientsform/mainform'
+
 function Doctorcard(props) {
     const [opendescription, setopendescription] = useState(false)
     const openDesc = () => setopendescription(true);
@@ -33,14 +34,16 @@ function Doctorcard(props) {
     const content_book = <Modal
         show={openform}
         onCancel={closeform}
-        header={props.name}
+        header="Send a request"
         footer={foot2}
     >
 
         <div className='modal-content'>
 
             
-            <MainForm/>
+
+       <MainForm/>
+  
             
         </div>
     </Modal>
