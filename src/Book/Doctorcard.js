@@ -41,7 +41,9 @@ function Doctorcard(props) {
         <div className='modal-content'>
 
             
+
        <MainForm/>
+  
             
         </div>
     </Modal>
@@ -72,7 +74,7 @@ function Doctorcard(props) {
           <button className='custom-button' onClick={openDesc}>
               <div className='content'>
                   <h3>Doctor : {props.name}</h3>
-                  <p>Years: {props.years}</p>
+                  <p>Years Worked: {props.years}</p>
               </div>
           </button>
       </div>

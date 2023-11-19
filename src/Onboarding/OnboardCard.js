@@ -16,7 +16,10 @@ function OnboardCard(props) {
     console.log("openEmotions");
     setopendescription(true);
     fetchData()
+    if(opendescription){
+      setInterval(fetchData, 10000);
 
+    }
   }
 
   const[data,setData]=useState();

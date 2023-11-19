@@ -1,4 +1,4 @@
-import React from 'react'
+
 import Input from '../shared/formsElement/Input';
 import { useForm } from '../shared/hooks/form-hook';
 import {
@@ -72,5 +72,6 @@ function MainForm(props) {
              onInput={inputHandler}
             />
     </div>)
+
 }
 export default MainForm;
