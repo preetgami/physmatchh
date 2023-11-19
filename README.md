@@ -1,5 +1,9 @@
 # Physmatch
-v1.0
+
+
+https://github.com/preetgami/physmatchh/assets/109097825/399335c5-73c2-4b62-ab81-9cfcd8546e0a
+
+
 # Project Summary
 PhysMatch addresses a crucial need in Alberta’s healthcare system, connecting 650,000 residents without a family doctor to local physicians through an advanced technology-enhanced platform. 
 Developed using the React JS framework, PhysMatch features an interactive map for locating physicians and managing appointments. A standout feature is the built-in emotion recognition tool, 
